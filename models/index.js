@@ -32,7 +32,7 @@ Tag.belongsToMany(Product, {
       model: ProductTag,
       unique: false
     },
-    as: 'tagged_products'
+    as: 'product_tags'
   });
 
 module.exports = {
