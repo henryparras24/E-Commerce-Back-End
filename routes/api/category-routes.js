@@ -5,7 +5,7 @@ const { Category, Product } = require('../../models');
 
 router.get('/', async(req, res) => {
   // grabs all categories shirts, shorts, music etc...
-  //http://localhost:3001/api/categories
+  // http://localhost:3001/api/categories
   try {
     const categoryData = await Category.findAll({
       include: [{ model: Product }],
@@ -16,6 +16,7 @@ router.get('/', async(req, res) => {
 }
 });
 router.get('/:id', async(req, res) => {
+  // grabs music...!
   // http://localhost:3001/api/categories/3
   try {
     const categoryData = await Category.findByPk(req.params.id, {

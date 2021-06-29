@@ -5,11 +5,11 @@ const { Tag, Product, ProductTag } = require('../../models');
 
 router.get('/', async (req, res) => {
   // find all tags
-  // 
+  // http://localhost:3001/api/tags
   try {
     const TagData = await Tag.findAll(
       {
-       include: [{ model: Product, through: ProductTag, as: 'products_data' }],
+       include: [{ model: Product, through: ProductTag, as: 'product_tags' }],
     }
     );
     res.status(200).json(TagData);
@@ -20,12 +20,12 @@ router.get('/', async (req, res) => {
 // GET single tag
 router.get('/:id', async (req, res) => {
   // find a single tag by its `id`
-  //http://localhost:3001/api/tags/3
+  // http://localhost:3001/api/tags/3
   try {
     const TagData = await Tag.findByPk(req.params.id, 
       {
       // be sure to include its associated Product data
-      include: [{ model: Product, through: ProductTag, as: 'products_data' }],
+      include: [{ model: Product, through: ProductTag, as: 'product_tags' }],
     }
     );
     if (!TagData) {
