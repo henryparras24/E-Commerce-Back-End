@@ -17,10 +17,10 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-// GET single tag
+
 router.get('/:id', async (req, res) => {
-  // find a single tag by its `id`
-  // http://localhost:3001/api/tags/3
+  // grabs rock music!
+  // http://localhost:3001/api/tags/1
   try {
     const TagData = await Tag.findByPk(req.params.id, 
       {

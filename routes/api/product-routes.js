@@ -17,6 +17,7 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
 router.get('/:id', async (req, res) => {
   // grabbing running sneakers
   // http://localhost:3001/api/products/2
